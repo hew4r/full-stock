@@ -1,27 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React  from 'react';
 import './App.css';
+import axios from 'axios'
+const fs = require('fs');
+const path = require('path');
+class App extends React.Component {
+  
+  state = {
+    persons: []
+  }
+  
+  componentDidMount() {
+    const fs = require('fs');
+ 
+    fs.readFile('https://jsonplaceholder.typicode.com/todos/1', (err, data) => {
+      if (err) throw err;
+      let student = JSON.parse(data);
+      console.log(student);
+    });
 
-class App extends Component {
+  }
+  
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+      <ul>
+      
+      </ul>
+    )
   }
 }
 
